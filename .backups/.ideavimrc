@@ -1,0 +1,173 @@
+ ===
+let mapleader = ' '
+
+set relativenumber
+" set scrolloff=5
+set visualbell
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+noremap <leader>cc :edit ~/.ideavimrc<CR>
+" noremap <leader>cs :source ~/.ideavimrc<CR>:nohlsearch<CR>
+noremap <leader>cs :source ~/.ideavimrc<CR>:nohlsearch<CR>:echo "IdeaVim reloaded"<CR>
+
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+" Прокрутка на 3 строки
+nnoremap <C-d> 3<C-e>
+nnoremap <C-u> 3<C-y>
+
+
+" === Navigation: word motions ===
+map w  [w
+map e  ]w
+map b  [b
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+nnoremap <Leader>n :action NextWindow<CR>
+
+nnoremap <Leader>q :action CloseContent<CR>
+nnoremap <Leader>qa :action CloseAllEditors<CR>
+
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
+" Вместо gg используем действие IDE для перехода в начало
+nnoremap zk :action EditorTextStart<CR>:action MethodDown<CR>zz
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+vnoremap <leader>c :action CommentByLineComment<CR>
+
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+
+nnoremap <Leader>= :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+
+nnoremap <c-r> :action RecentFiles<CR>
+nnoremap <leader>l :action RecentLocations<CR>
+
+
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
+nnoremap <c-/> :action FindInPath<CR>
+nnoremap <c-a> :action GotoAction<CR>
+nnoremap <c-f> :action GotoFile<CR>
+nnoremap <leader>u :action FindUsages<CR>
+
+
+nnoremap <leader>s :action GotoRelated<CR>
+
+nnoremap <leader>h :action LocalHistory.ShowHistory<CR>
+
+" Hierarch
+
+nnoremap ghc :action CallHierarchy<CR>
+nnoremap ght :action TypeHierarchy<CR>
+nnoremap ghm :action MethodHierarchy<CR>
+
+
+
+nnoremap <leader>b :action ShowNavBar<CR>
+nnoremap <leader>n :action NewElement<CR>
+
+
+nnoremap <c-s> :action FileStructurePopup<CR>
+nnoremap <c-o> :action GotoSymbol<CR>
+
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,c :action RunClass<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
+
+set NERDTree
+set switch
+let g:switch_definitions = 'group:basic,group:java'
+set ideajoin          " Smart line join
+set idearefactormode=keep
+set which-key
+set timeoutlen=400
+
+" Multiple Cursor
+nmap <C-n> <Action>(SelectNextOccurrence)
+xmap <C-n> <Action>(SelectNextOccurrence)
+nmap <C-S-n> <Action>(FindNext)
+xmap <C-S-n> <Action>(FindNext)
+" nmap <C-p> <Action>(UnselectPreviousOccurrence)
+" xmap <C-p> <Action>(UnselectPreviousOccurrence)
+nmap <leader><C-n> <Action>(SelectAllOccurrences)
+
+" === Switch mappings ===
+nmap - :Switch<CR>
+nmap + :SwitchReverse<CR>
+let g:WhichKeyDesc_switch         = "<leader> - Switch"
+let g:WhichKeyDesc_switch_reverse = "<leader> + Switch"
+
+" === Navigation/Goto ===
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+
+
+" === Misc ===
+map <leader>rp <Action>(ManageRecentProjects)
+
+map <leader>j <Action>(ActivateProjectToolWindow)
+
+
+
+" map <leader>b <Action>(ToggleLineBreakpoint)
+
+
+map <leader>ii <Action>(ParameterInfo)
+
+" nnoremap <leader>th :action ToggleInlayHintsGlobally<CR>
+
+nnoremap U :action $Redo<CR>
+nnoremap u :action $Undo<CR>
+
+"Посмотреть потом, может понадобится?
+"nnoremap sh :action StretchSplitToLeft<CR>
+"nnoremap sl :action StretchSplitToRight<CR>
+"nnoremap sk :action StretchSplitToTop<CR>
+"nnoremap sj :action StretchSplitToBottom<CR>
+"nnoremap sf :action MaximizeEditorInSplit<CR>
