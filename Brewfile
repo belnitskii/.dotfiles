@@ -7,6 +7,7 @@ brew "skhd"
 brew "sketchybar"
 brew "htop"
 
+cask "karabiner-elements"
 cask "alacritty"
 cask "firefox"
 cask "telegram"
