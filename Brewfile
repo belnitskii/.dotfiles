@@ -5,6 +5,7 @@ brew "stow"
 brew "yabai"
 brew "skhd"
 brew "sketchybar"
+brew "htop"
 
 cask "alacritty"
 cask "firefox"
