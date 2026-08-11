@@ -9,3 +9,4 @@ alacritty/.config/alacritty/themes/
 
 # Karabiner backups
 karabiner/.config/karabiner/automatic_backups/
+karabiner/.config/karabiner/karabiner.json

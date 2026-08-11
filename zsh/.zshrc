@@ -57,7 +57,8 @@ qcd () {
 # Set up tab completion
 complete -W "work downloads linux" qcd
 
-CDPATH=/Users/user:/Users/user/Work:/Users/user/linux_console
+CDPATH=$HOME:$HOME/Work:$HOME/linux_console:$HOME/.dotfiles
+
 alias dirs='dirs -v'
 alias gd=pushd 
 alias pd=popd
