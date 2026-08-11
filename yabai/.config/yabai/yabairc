@@ -52,6 +52,9 @@ yabai -m config                                 \
           yabai -m rule --add app="System Preferences|Mail|Calculator|App Store" manage=off
 	      echo "yabai configuration loaded.."
 
-        yabai -m rule --add app="IntelliJ IDEA" opacity=1.0
-        yabai -m rule --add app="^IntelliJ IDEA$" manage=on opacity=1.0 layer=above
+# borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+borders active_color=0xffa855f7 inactive_color=0xff27213b width=5.0 &
 
+# Rules
+yabai -m rule --add app="IntelliJ IDEA" opacity=1.0
+yabai -m rule --add app="^IntelliJ IDEA$" manage=on opacity=1.0 layer=above

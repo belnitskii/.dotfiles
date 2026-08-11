@@ -3,12 +3,12 @@
 cmd + shift - p ; passthrough
 passthrough < cmd + shift - p ; default
 
-
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
+
 
 # swap window
 shift + alt - h : yabai -m window --swap west
@@ -70,13 +70,11 @@ alt - e : yabai -m window --toggle split
 # float / unfloat window and center on screen
 alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2 
 
-# new window
 shift + alt - n : yabai -m space --create && \
                    index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
                    yabai -m window --space "${index}" && \
                    yabai -m space --focus "${index}"
 
-# restart yabai
 ctrl + alt + cmd - r : yabai --restart-service
 
 
@@ -84,7 +82,7 @@ ctrl + alt + cmd - r : yabai --restart-service
 #yabai -m query --windows --space | jq '.[] | .app'
 alt - c : open -a 'IntelliJ IDEA'
 alt - u : open -a 'Google Chrome'
-alt - m : open -a 'Yandex Music'
+alt - m : open -a 'Яндекс Музыка'
 alt - n : open -a 'Notion' 
 #alt - i : open -a 'iTerm.app'
 alt - o : open -a 'Obsidian'

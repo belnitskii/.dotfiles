@@ -12,8 +12,3 @@ if [[ -f /opt/homebrew/bin/brew ]]; then
 fi
 
 brew bundle;
-
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_DIR="$HOME/.config"
-
-mkdir -p "$CONFIG_DIR"

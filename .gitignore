@@ -1,1 +1,11 @@
 .DS_Store
+
+# Vim runtime/plugins
+vim/.config/vim/plugged/
+vim/.config/vim/autoload/plug.vim
+
+# Alacritty themes repository
+alacritty/.config/alacritty/themes/
+
+# Karabiner backups
+karabiner/.config/karabiner/automatic_backups/
